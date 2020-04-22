@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import { v4 as uuid } from 'uuid' // GROSS
 import './App.css';
+import MemberCard from "./components/memberCard";
+import Forms from "./components/forms";
+
+
 
 const theTeam = [
   {id:uuid(), firstName:'John', lastName:'Snow'},
@@ -16,6 +20,8 @@ const initialFornValues = {
 function App() {
   const [teammates, setTeammates] = useState(theTeam)
   const [formValues, setFormValues] = useState(initialFornValues)
+
+
   const onInputChange=(event)=>{
     const name = event.target.name
     const value = event.target.value
@@ -37,25 +43,14 @@ function App() {
   
   return (
     <div className="App">
-      <form>
-        <label>First Name:&nbsp;
-          <input
-            value={formValues.firstName}
-            type='text'
-            onChange={onInputChange}
-            name='firstName'/>
-        </label>
-        <label>Last Name:&nbsp;
-          <input
-            value={formValues.lastName}
-            type='text'
-            onChange={onInputChange}
-            name='lastName'/>
-        </label>
-        <button onClick={onSubmit}>submit</button>
-      </form>
+      <h1 style={{color:'darkblue'}}>Team Builder</h1>
 
-      <friends></friends>
+      <Forms 
+        formValues={formValues} 
+        onInputChange={onInputChange} 
+        onSubmit={onSubmit}/>
+
+      <MemberCard teammates={teammates}/>
 
       
     </div>
