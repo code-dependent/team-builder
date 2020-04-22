@@ -8,12 +8,13 @@ import Forms from "./components/forms";
 
 
 const theTeam = [
-  {id:uuid(), firstName:'John', lastName:'Snow'},
-  {id:uuid(), firstName:'Daenerys', lastName:'Targaryen'}
+  {id:uuid(), name:'John Snow', email:'John@Snow.got',role:`Night's Watch`},
+  {id:uuid(), name:'Daenerys Targaryen', email:'Daenerys@Targaryen.got', role:'Mother of Dragons'}
 ]
 const initialFornValues = {
-  firstName:'',
-  lastName:''
+  name:'',
+  email:'',
+  role:''
 
 }
 
@@ -34,8 +35,9 @@ function App() {
     event.preventDefault()
     const newFriend = {
       id:uuid(),
-      firstName: formValues.firstName,
-      lastName: formValues.lastName,
+      name: formValues.name,
+      email: formValues.email,
+      role: formValues.role
     }
     setTeammates([...teammates, newFriend])
     setFormValues(initialFornValues)

@@ -14,19 +14,31 @@ const Forms = (props)=>{
 
     return(
         <form style={formStyle}>
-        <label>First Name:&nbsp;
+        <label>Name:&nbsp;
           <input
-            value={props.formValues.firstName}
+            value={props.formValues.name}
             type='text'
             onChange={onInputChange}
-            name='firstName'/>
+            name='name'/>
         </label>
-        <label>Last Name:&nbsp;
+        <label>Email:&nbsp;
           <input
-            value={props.formValues.lastName}
+            value={props.formValues.email}
             type='text'
             onChange={onInputChange}
-            name='lastName'/>
+            name='email'/>
+        </label>
+        <label>Role:&nbsp;
+          <select
+            value={props.formValues.role}
+            onChange={onInputChange}
+            name='role'>
+            <option defaultValue=''>Please choose</option>
+            <option value='married'>Team Lead</option>
+            <option value='back-end Web Developer'>back-end Web Developer</option>
+            <option value='Front-end Web Developer'>Front-end Web Developer</option>
+            <option value='Consultant'>Consultant</option>
+          </select>
         </label>
         <button onClick={onSubmit}>submit</button>
       </form>
