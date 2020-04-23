@@ -13,7 +13,7 @@ const Forms = (props)=>{
     }
 
     return(
-        <form style={formStyle}>
+      <form style={formStyle}>
         <label>Name:&nbsp;
           <input
             value={props.formValues.name}
@@ -34,7 +34,7 @@ const Forms = (props)=>{
             onChange={onInputChange}
             name='role'>
             <option defaultValue=''>Please choose</option>
-            <option value='married'>Team Lead</option>
+            <option value='Team Lead'>Team Lead</option>
             <option value='back-end Web Developer'>back-end Web Developer</option>
             <option value='Front-end Web Developer'>Front-end Web Developer</option>
             <option value='Consultant'>Consultant</option>
